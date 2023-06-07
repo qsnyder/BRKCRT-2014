@@ -262,3 +262,10 @@ fabric.properties
 
 # Editor-based Rest Client
 .idea/httpRequests
+
+brkcrt2014/
+venv/
+.virl
+roles/securenetwrk.ios_vrf
+ansible/collections/
+**/.DS_Store⏎

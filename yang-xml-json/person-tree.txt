@@ -1,4 +1,4 @@
-module: belk-model
+module: person-model
   +--rw person
      +--rw name?             string
      +--rw age?              uint32

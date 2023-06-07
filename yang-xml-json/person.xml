@@ -1,0 +1,5 @@
+<person xmlns="http://com/example/personmodel">
+    <name>Quinn Snyder</name>
+    <age>35</age>
+    <favorite-color>clear</favorite-color>
+</person>

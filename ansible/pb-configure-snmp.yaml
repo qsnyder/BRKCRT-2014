@@ -4,13 +4,15 @@
     connection: network_cli
     gather_facts: no
     tasks:
-      - name: "TASK 1 in PLAY 1 - CONFIGURE SNMP LINES"
-        cisco.ios.ios_config:
-          lines:
-            - snmp-server community belk-demo RO
-            - snmp-server location VEGAS
-            - snmp-server contact JASON_BELK
-      - name: "TASK 2 in PLAY 1 - VERIFY SNMP LINES PRESENT"
-        cisco.ios.ios_command:
-          commands:
-            - "show run | include snmp-server"
+      - name: TASK 1 in PLAY 1 - Modifying the SNMP configuration
+        cisco.ios.ios_snmp_server:
+          config:
+            communities:
+            -   name: CLUS-DEMO
+                ro: true
+            contact: BEARDED_GUY
+            location: LAS_VEGAS
+          state: merged
+      - name: "TASK 2 in PLAY 1 - Verify the SNMP configuration exists"
+        cisco.ios.ios_snmp_server:
+          state: gathered
